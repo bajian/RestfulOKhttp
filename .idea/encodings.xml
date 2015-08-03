@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/libs/gson-2.3.1.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/okhttp-2.0.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/okhttp-urlconnection-2.0.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/retrofit-1.9.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/rxandroid-0.23.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/libs/rxjava-1.0.6.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/api/MyApi.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/client/ApiHeaders.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/client/V2EXCookieManger.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/model/V2EXSettingHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/persistence/Constant.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/persistence/Debug.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/persistence/IntentConstant.java" charset="UTF-8" />
+  </component>
+</project>
