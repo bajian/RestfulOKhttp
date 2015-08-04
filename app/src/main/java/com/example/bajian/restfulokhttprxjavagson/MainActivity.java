@@ -26,22 +26,47 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myApi = RetrofitPHPUtils.createApi(MyApi.class);
-        myApi.getBanner()
+        myApi.getQuestion(100)
                 .subscribeOn(Schedulers.immediate())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(bannerDatas -> addBannerDatas(bannerDatas),throwable -> handleError(throwable));
+                .subscribe(this::addQuestion, this::handleError);
+/*        myApi.getBanner()
+                .subscribeOn(Schedulers.immediate())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::addBannerDatas, this::handleError);*/
 
+
+       /*http://www.tuicool.com/articles/iQJJJ3Y
+        下面是可能会用到Scheduler：
+
+        Schedulers.computation()：用于计算型工作例如事件循环和回调处理，不要在I/O中使用这个函数（应该使用Schedulers.io()函数）；
+
+        Schedulers.from(executor)：使用指定的Executor作为Scheduler；
+
+        Schedulers.immediate()：在当前线程中立即开始执行任务；
+
+        Schedulers.io()：用于I/O密集型工作例如阻塞I/O的异步操作，这个调度器由一个会随需增长的线程池支持；对于一般的计算工作，使用Schedulers.computation()；
+
+        Schedulers.newThread()：为每个工作单元创建一个新的线程；
+
+        Schedulers.test()：用于测试目的，支持单元测试的高级事件；
+
+        Schedulers.trampoline()：在当前线程中的工作放入队列中排队，并依次操作。
+
+        通过设置observeOn和subscribeOn调度器，我们定义了网络请求使用哪个线程（Schedulers.newThread()）。*/
     }
 
 
     private void addBannerDatas(List<BannerData> bannerDatas) {
-        Log.d(TAG,  "bannerDatas.size()"+bannerDatas.size() );
+        Log.d(TAG, "bannerDatas.size()" + bannerDatas.get(0).getBannerUrl());
+    }
+
+    private void addQuestion(QuestionBean mQuestionBean) {
+        Log.d(TAG,  "bannerDatas.size()"+mQuestionBean.getStatus());
     }
 
     private void handleError(Throwable throwable) {
         Log.d(TAG,  "handleError()"+throwable.getCause());
-        Log.d(TAG,  "handleError()"+throwable.toString());
-        Log.d(TAG,  "handleError()"+throwable.getLocalizedMessage());
     }
 
 

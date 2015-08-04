@@ -7,6 +7,8 @@
     <file url="file://$PROJECT_DIR$/app/libs/retrofit-1.9.0.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/libs/rxandroid-0.23.0.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/libs/rxjava-1.0.6.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/MainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/QuestionBean.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/api/MyApi.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/client/ApiHeaders.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/bajian/restfulokhttprxjavagson/client/V2EXCookieManger.java" charset="UTF-8" />

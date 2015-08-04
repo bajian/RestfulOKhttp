@@ -1,15 +1,11 @@
 package com.example.bajian.restfulokhttprxjavagson.api;
 
 import com.example.bajian.restfulokhttprxjavagson.BannerData;
+import com.example.bajian.restfulokhttprxjavagson.QuestionBean;
 
 import java.util.List;
 
-import retrofit.client.Response;
-import retrofit.http.Field;
-import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
-import retrofit.http.POST;
-import retrofit.http.Path;
 import retrofit.http.Query;
 import rx.Observable;
 
@@ -21,6 +17,15 @@ public interface MyApi {
     @GET("/ad.html")
     Observable<List<BannerData>> getBanner();
 
+    @GET("/getQuestionList?UID=10596&Timestamp=1433490635&Nonce=82306937&Signature=ed4adcc0288bc5965dbcd624fe9163a3b3c87392")
+    Observable<QuestionBean> getQuestion(@Query("p") int page);
+//@Path URL上的参数
+//@Field("tid") String tid  @FormUrlEncoded POST
+//@Query("p") int page  提交的参数
+//http://new.snewfly.com/getQuestionList?UID=10596&
+//Timestamp=1433490635&Nonce=82306937&Signature=ed4adcc0288bc5965dbcd624fe9163a3b3c87392&p=100
+
+/*
     @GET("/go/{node}")
     Observable<Response> getTopicsList(@Query("p") int page, @Path("node") String node);
 
@@ -46,4 +51,6 @@ public interface MyApi {
 
     @POST("/t/{uid}")
     Observable<Response> postReply(@Path("uid") String uid, @Field("content") String content, @Field("once") String once);
+*/
+
 }
