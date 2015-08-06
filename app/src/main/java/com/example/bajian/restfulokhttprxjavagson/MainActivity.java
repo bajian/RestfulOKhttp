@@ -1,15 +1,19 @@
 package com.example.bajian.restfulokhttprxjavagson;
 
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.bajian.restfulokhttprxjavagson.api.MyApi;
 import com.example.bajian.restfulokhttprxjavagson.client.RetrofitPHPUtils;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -56,7 +60,45 @@ public class MainActivity extends AppCompatActivity {
         通过设置observeOn和subscribeOn调度器，我们定义了网络请求使用哪个线程（Schedulers.newThread()）。*/
     }
 
-
+/*
+    private void runMe() throws InterruptedException {
+        synchronized (this){
+            Log.d(TAG,  Thread.currentThread().getName()+"begin");
+            Thread.sleep(10000);
+            Log.d(TAG, Thread.currentThread().getName() +"end");
+        }
+    }*/
+    class MyThread extends Thread{
+        @Override
+        public void run() {
+            synchronized (this){
+                Log.d(TAG,  Thread.currentThread().getName()+"begin");
+                try {
+                    Thread.sleep(10000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Log.d(TAG, Thread.currentThread().getName() +"end");
+            }
+        }}
+        public void go(View view){
+//            ExecutorService pool=Executors.newFixedThreadPool(5);
+            ExecutorService pool=Executors.newSingleThreadExecutor();
+            for(int i=0;i<7;i++){
+                pool.submit(new MyThread());
+            }
+            pool.shutdown();
+        /*new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    runMe();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();*/
+    }
     private void addBannerDatas(List<BannerData> bannerDatas) {
         Log.d(TAG, "bannerDatas.size()" + bannerDatas.get(0).getBannerUrl());
     }

@@ -24,7 +24,6 @@ public interface MyApi {
 //@Query("p") int page  提交的参数
 //http://new.snewfly.com/getQuestionList?UID=10596&
 //Timestamp=1433490635&Nonce=82306937&Signature=ed4adcc0288bc5965dbcd624fe9163a3b3c87392&p=100
-
 /*
     @GET("/go/{node}")
     Observable<Response> getTopicsList(@Query("p") int page, @Path("node") String node);
